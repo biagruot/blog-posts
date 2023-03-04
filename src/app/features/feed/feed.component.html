@@ -1,0 +1,24 @@
+<div class="container">
+  <header>
+    <app-feed-search />
+    <button class="btn btn--primary" [routerLink]="['/post']">New Post</button>
+  </header>
+
+  <main>
+    <ng-container [ngSwitch]="uiStatus$ | async">
+      <app-loader *ngSwitchCase="feedUIStatus.IS_LOADING" />
+      <app-feed-list *ngSwitchCase="feedUIStatus.IS_LOADED" />
+      <h1 *ngSwitchCase="feedUIStatus.HAS_ERROR">
+        Something went wrong. Try to refresh the page!
+      </h1>
+      <h1 *ngSwitchCase="feedUIStatus.NO_RESULTS">
+        No results found. Try to change your search query!
+      </h1>
+    </ng-container>
+  </main>
+
+  <footer>
+    <app-feed-pagination
+      *ngIf="(uiStatus$ | async) === feedUIStatus.IS_LOADED" />
+  </footer>
+</div>

@@ -1,0 +1,31 @@
+@import 'variables';
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $secondary-color;
+  padding: 1rem;
+  border-top: solid 1px $accent-color;
+  box-shadow: 0 0 0.5rem 0.5rem $primary-color;
+
+  &__button {
+    &--next {
+      border-radius: 0 0.25rem 0.25rem 0;
+    }
+    &--prev {
+      border-radius: 0.25rem 0 0 0.25rem;
+    }
+  }
+  &__current-page {
+    color: $text-secondary-color;
+    font-weight: bold;
+  }
+  &__info {
+    margin: 0 1rem;
+  }
+  &__total-pages {
+    color: $text-secondary-color;
+    font-style: italic;
+  }
+}

@@ -1,0 +1,13 @@
+<form class="search-form" [formGroup]="form">
+  <input
+    type="text"
+    name="search"
+    title="Search"
+    class="search-form__input"
+    formControlName="search"
+    placeholder="Search..." />
+
+  <button type="button" class="btn btn--primary" (click)="clearSearch()">
+    Clear
+  </button>
+</form>

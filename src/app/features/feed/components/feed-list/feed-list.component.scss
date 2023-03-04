@@ -1,0 +1,62 @@
+@import 'variables';
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
+  grid-gap: 2rem;
+  padding: 2rem;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $secondary-color;
+  border-radius: 0.5rem;
+  border: solid 1px $accent-color;
+  padding: 1rem;
+  box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.25);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+
+    span {
+      color: $text-primary-color;
+      font-size: $font-size-small;
+      font-weight: 500;
+    }
+  }
+
+  &__title {
+    color: $text-secondary-color;
+    font-size: $font-size-large;
+    font-weight: 700;
+    margin: 0.5rem 0;
+  }
+
+  &__body {
+    color: $text-primary-color;
+    font-size: $font-size-medium;
+    font-weight: 500;
+    margin: 0.5rem 0;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}

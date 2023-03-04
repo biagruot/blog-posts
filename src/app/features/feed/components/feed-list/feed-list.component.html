@@ -1,0 +1,15 @@
+<div *ngIf="posts$ | async as posts" class="container">
+  <div class="post" *ngFor="let post of posts">
+    <div class="post__header">
+      <span>Posted by {{ post.user.username }}</span>
+      <span>Post ID #{{ post.id }}</span>
+    </div>
+    <div class="post__title">{{ post.title }}</div>
+    <div class="post__body">{{ post.body }}</div>
+    <div class="post__buttons">
+      <button class="btn btn--primary btn--small" (click)="deletePost(post.id)">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>

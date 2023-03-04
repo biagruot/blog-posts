@@ -1,0 +1,18 @@
+<div *ngIf="pagination$ | async as pagination" class="pagination">
+  <button
+    class="btn btn--primary pagination__button pagination__button--prev"
+    [disabled]="(currentPage$ | async) === 1"
+    (click)="onPrevPage()">
+    Prev
+  </button>
+  <div class="pagination__info">
+    <span class="pagination__current-page">{{ currentPage$ | async }}</span> /
+    <span class="pagination__total-pages">{{ pagination?.last?.page }}</span>
+  </div>
+  <button
+    class="btn btn--primary pagination__button pagination__button--next"
+    [disabled]="(currentPage$ | async) === pagination?.last?.page"
+    (click)="onNextPage()">
+    Next
+  </button>
+</div>

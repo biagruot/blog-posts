@@ -1,0 +1,33 @@
+@import 'variables';
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $secondary-color;
+  border-radius: 0.5rem;
+  border: solid 1px $accent-color;
+  padding: 1rem;
+  box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  height: 100%;
+  width: 100%;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 1rem;
+
+    &__input {
+      &--description {
+        resize: vertical;
+        height: 100%;
+      }
+    }
+
+    &__error {
+      color: $error-color;
+      font-size: $font-size-medium;
+    }
+  }
+}

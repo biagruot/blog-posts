@@ -1,0 +1,56 @@
+<div class="editor">
+  <form class="form" [formGroup]="form">
+    <input
+      type="text"
+      name="title"
+      title="Post Title"
+      class="form__input form__input--tile"
+      formControlName="title"
+      placeholder="What do you want to talk about?" />
+
+    <span
+      class="form__error"
+      *ngIf="
+        form.get('title')?.hasError('required') && form.get('title')?.touched
+      "
+      >The title is required</span
+    >
+    <span
+      class="form__error"
+      *ngIf="
+        form.get('title')?.hasError('minlength') && form.get('title')?.touched
+      "
+      >The title must be at least 3 characters long</span
+    >
+
+    <textarea
+      name="body"
+      title="Post Body"
+      class="form__input form__input--description"
+      formControlName="body"
+      placeholder="What's on your mind?"></textarea>
+
+    <span
+      class="form__error"
+      *ngIf="
+        form.get('body')?.hasError('required') && form.get('body')?.touched
+      "
+      >The body is required</span
+    >
+    <span
+      class="form__error"
+      *ngIf="
+        form.get('body')?.hasError('minlength') && form.get('body')?.touched
+      "
+      >The body must be at least 3 characters long</span
+    >
+
+    <button
+      type="button"
+      class="btn btn--primary"
+      [disabled]="form.invalid"
+      (click)="createPost()">
+      Create Post
+    </button>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+  <header>
+    <button class="btn btn--primary" [routerLink]="['/']">Feed</button>
+  </header>
+
+  <main>
+    <ng-container [ngSwitch]="uiStatus$ | async">
+      <app-loader *ngSwitchCase="feedUIStatus.IS_LOADING" />
+      <h1 *ngSwitchCase="feedUIStatus.HAS_ERROR">
+        Something went wrong. Try to refresh the page!
+      </h1>
+      <app-editor *ngSwitchCase="feedUIStatus.IS_LOADED" />
+    </ng-container>
+  </main>
+</div>

@@ -1,1 +1,87 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'reset';
+@import 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  background: $primary-color;
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: $secondary-color;
+  padding: 1rem 2rem;
+  border-bottom: solid 1px $accent-color;
+  box-shadow: 0 0 0.5rem 0.5rem $primary-color;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  height: 5.625rem;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: $font-size-medium;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &--small {
+    padding: 0.25rem 0.5rem;
+    font-size: $font-size-small;
+  }
+
+  &--large {
+    padding: 0.75rem 1.5rem;
+    font-size: $font-size-large;
+  }
+
+  &--primary {
+    background-color: $button-primary-bg-color;
+    color: $button-primary-text-color;
+  }
+
+  &--secondary {
+    background-color: $button-secondary-bg-color;
+    color: $button-secondary-text-color;
+    border: solid 1px $accent-color;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+h1 {
+  color: $text-secondary-color;
+}
+
+input,
+textarea {
+  background-color: $primary-color;
+  border: solid $text-accent-color;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: $font-size-large;
+  color: $text-secondary-color;
+}

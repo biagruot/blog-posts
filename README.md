@@ -31,8 +31,6 @@ https://blog-posts-eight.vercel.app/feed
 
 ## Missing Features
 
-Due to time constraints, and some unexpecteds which prevented me from dedicating the plannet time to the project, it lacks the following features:
-
 - Unit Tests and e2e Tests: The lack of testing is regrettable, but it does not detract from the project's core functionality.
 - Alert/Error: The use of browser alert/error is not recommended, and I recognize that a custom alert/modal would be a more suitable replacement.
 - UI/UX and Edge Cases: The project's user interface and user experience, including edge case handling, require further refinement to enhance their quality and accessibility.
